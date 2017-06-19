@@ -7,7 +7,7 @@ import java.io.*;
 
 
 public class DemoChar extends DD {
-
+ public static int failCount=0;
   
 
   public int _test(List<String> config)
@@ -15,6 +15,7 @@ public class DemoChar extends DD {
 	   String regex="<SELECT*[^>]*";
 	  for (String entry : config) {
 		    if (entry.matches(regex)) {
+		    	failCount++;	
           return FAIL;
 		    }
 	  }
@@ -40,7 +41,7 @@ public class DemoChar extends DD {
       //config.add(THREE);
       //config.add(FOUR);
      // String s="Hello I am string, please convert me to linked list";
-      FileReader fr=new FileReader("E:/thesis/simple.xml");
+      FileReader fr=new FileReader("E:/thesis/demo.html");
       
       BufferedReader br=new BufferedReader(fr);
       String s;
@@ -61,7 +62,7 @@ public class DemoChar extends DD {
 
       System.out.println("Running ddmin");    
       List c = mydd.ddmin(config);
-
+      System.out.println(failCount);
      // System.out.println("");
       //System.out.println("Running ddiso");    
       //List ret = mydd.ddiso(new LinkedList(), config);
