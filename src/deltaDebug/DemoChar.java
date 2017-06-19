@@ -12,7 +12,7 @@ public class DemoChar extends DD {
 
   public int _test(List<String> config)
   {
-	   String regex="<SELECT";
+	   String regex="<SELECT*[^>]*";
 	  for (String entry : config) {
 		    if (entry.matches(regex)) {
           return FAIL;
